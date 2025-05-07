@@ -36,8 +36,6 @@ async def startup_event():
     try:
         # 设置超时时间为10秒
         print("Performance.py 启动中......")
-        # script_path = os.path.abspath("server/Performance.py")
-        # print(f"正在启动: {script_path}")
         await asyncio.wait_for(mcp_client.connect_to_server("server/Performance.py"), timeout=10.0)
         print("Performance.py 启动成功")
     except asyncio.TimeoutError:

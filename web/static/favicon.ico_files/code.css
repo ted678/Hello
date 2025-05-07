@@ -1,0 +1,63 @@
+<!doctype html><html lang="zh-CN"><head><script>Object.defineProperty(window, 'MutationObserver', {
+                writable: false,
+                configurable: false
+            })</script><meta charset="UTF-8"/><title>文心一言</title><meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no,viewport-fit=cover"/><meta name="description" content="文心一言既是你的智能伙伴，可以陪你聊天、回答问题、画图识图；也是你的AI助手，可以提供灵感、撰写文案、阅读文档、智能翻译，帮你高效完成工作和学习任务。"/><meta name="keywords" content="文小言,言小文,一言,文心,AI,AI大模型,AI写作,AI搜索,AI文档,文档处理,搜索,快速搜索,人工智能,智能大模型,自然语言处理,机器学习,自动化写作,智能写作助手,AI 文本生成,文本分析,智能搜索,个性化搜索,语义搜索,文档自动化,智能文档管理,文档协作,文本编辑器,实时文档处理,文档生成工具,内容创作工具,快速信息检索,高效文档整理,智能写作平台,AI内容优化,自动化内容创作,智能摘要生成,AI写作工具,语义分析,自然语言生成,智能助手,AI内容分析,AI文档处理,智能文档编辑,内容生成引擎,自动化编辑,AI翻译工具,内容润色,多模态交互,语义理解,生成式对话,对话式搜索,信息整合,知识增强,内容转化,神经网络,智能体,大模型,生态构建,文本创作,跨语言理解,语义关系,应用场景,文本处理,定制化,无监督学习,预训练,大语言模型,AI翻译,语义识别,生成式人工智能,AI助手,快速写作,AI办公,机器学习,图像识别,人机交互,通用大模型,数据处理,模型训练,图像生成,AI问答,文生视频,语义理解,机器翻译,信息检索,神经网络,AI识别,AI教育,AI画图,AI翻译,智能问答,智能提取内容,AI文档生成,AI文档理解,智能图像识别,AI语音合成,AI搜索优化,内容优化,AI数据标注,智能行业分析,AI风险评估,文档优化,AI降重,论文降重,AI交互,图表设计,文档归纳,智能查询,查询,问答,智能写作,智能扩写,AI文章解读"/><meta name="baidu-site-verification" content="code-tVTqFRzvuU"/><meta name="screen-orientation" content="portrait"/><script src="//passport.baidu.com/passApi/js/uni_login_wrapper.js?cdnversion=202302071831"></script><script src="https://ppui-static-wap.cdn.bcebos.com/static/sdk-machine/js/mkd_v2.js?_=1"></script><link rel="shortcut icon" href="https://nlp-eb.cdn.bcebos.com/logo/favicon.ico" type="image/ico"/><link rel="manifest" crossorigin="use-credentials" href="/manifest.json"/><style>@keyframes initialDotPulse {
+                0% {
+                    box-shadow: -16px 20px 0 -5px #B89DFE,0px 20px 0 0 #2E6EE7,16px 20px 0 2px #B89DFE;
+                }
+
+                25% {
+                    box-shadow: -16px 20px 0 0 #B89DFE,0px 20px 0 2px #2E6EE7,16px 20px 0 0 #B89DFE;
+                }
+
+                50% {
+                    box-shadow: -16px 20px 0 2px #B89DFE,0px 20px 0 0 #2E6EE7,16px 20px 0 -5px #B89DFE;
+                }
+
+                75% {
+                    box-shadow: -16px 20px 0 0 #B89DFE,0px 20px 0 -5px #2E6EE7,16px 20px 0 0 #B89DFE;
+                }
+
+                100% {
+                    box-shadow: -16px 20px 0 -5px #B89DFE,0px 20px 0 0 #2E6EE7,16px 20px 0 2px #B89DFE;
+                }
+            }
+            .eb-initial-loading {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+            .eb-initial-loading::after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 20px);
+                left: 50%;
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+                transform: translateX(-50%) translateY(-50%);
+                animation: initialDotPulse 1.5s infinite linear;
+            }</style><script defer="defer" src="https://nlp-eb.cdn.bcebos.com/static/eb/js/runtime.4e5b461f.js"></script><script defer="defer" src="https://nlp-eb.cdn.bcebos.com/static/eb/js/index.789bc339.js"></script><script defer="defer" src="https://nlp-eb.cdn.bcebos.com/static/eb/js/vendor.3ebfd2e2.js"></script><link href="https://nlp-eb.cdn.bcebos.com/static/eb/css/index.a4811cd4.css" rel="stylesheet"><meta name="theme-color" content="#fff" /><link rel="manifest" href="https://nlp-eb.cdn.bcebos.com/static/eb/manifest.json" /></head><body><script src="https://xlab.baidu.com/res/bundle.u.php"></script><div id="root"><div class="eb-initial-loading"></div></div><script>var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?01e907653ac089993ee83ed00ef9c2f3";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+            })();</script><script>performance.mark && performance.mark('MARK_LOAD_HTML');</script><script>if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker
+                        .register('/service-worker.js')
+                        .then(() => {
+                            console.log('Service Worker registered');
+                        })
+                        .catch((error) => {
+                            console.error('Service Worker registration failed:', error);
+                        });
+                });
+            }</script></body></html>

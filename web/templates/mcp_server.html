@@ -1,0 +1,130 @@
+<!-- ... 现有代码 ... -->
+<div class="server-list">
+    <div class="server-list-title">服务器列表</div>
+    <div id="server-files-container">
+        <div class="loading">加载服务器列表中...</div>
+    </div>
+</div>
+<!-- ... 现有代码 ... -->
+
+<script>
+    // 获取服务器文件列表
+    function fetchServerFiles() {
+        // 使用fetch API请求服务器文件列表
+        fetch('/api/server-files')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应异常');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 获取容器元素
+                const container = document.getElementById('server-files-container');
+                
+                // 清空加载提示
+                container.innerHTML = '';
+                
+                // 如果没有文件
+                if (!data.files || data.files.length === 0) {
+                    container.innerHTML = '<div class="loading">未找到服务器文件</div>';
+                    return;
+                }
+                
+                // 遍历文件列表并创建元素
+                data.files.forEach((file, index) => {
+                    const serverItem = document.createElement('div');
+                    serverItem.className = 'server-item' + (index === 0 ? ' active' : '');
+                    serverItem.textContent = file;
+                    serverItem.onclick = function() {
+                        // 移除所有active类
+                        document.querySelectorAll('.server-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        // 为当前点击项添加active类
+                        this.classList.add('active');
+                        
+                        // 调用API切换到选中的服务器
+                        switchServer(file);
+                    };
+                    container.appendChild(serverItem);
+                });
+            })
+            .catch(error => {
+                console.error('获取服务器文件列表失败:', error);
+                const container = document.getElementById('server-files-container');
+                container.innerHTML = '<div class="loading">获取服务器列表失败: ' + error.message + '</div>';
+            });
+    }
+    
+    // 切换服务器
+    function switchServer(serverFile) {
+        console.log('切换到服务器:', serverFile);
+        
+        // 发送请求到后端API切换服务器
+        fetch('/api/switch-server', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ server: serverFile })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('切换服务器失败');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // 更新服务器状态信息
+                updateServerInfo(data);
+            } else {
+                alert('切换服务器失败: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('切换服务器请求失败:', error);
+            alert('切换服务器请求失败: ' + error.message);
+        });
+    }
+    
+    // 更新服务器信息
+    function updateServerInfo(data) {
+        // 这里可以根据返回的数据更新页面上的服务器信息
+        // 例如：
+        if (data.status) {
+            const statusIndicator = document.querySelector('.status-indicator');
+            if (data.status === 'online') {
+                statusIndicator.className = 'status-indicator status-online';
+                statusIndicator.nextSibling.textContent = '在线运行中';
+            } else {
+                statusIndicator.className = 'status-indicator status-offline';
+                statusIndicator.nextSibling.textContent = '离线';
+            }
+        }
+    }
+    
+    // 页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取服务器文件列表
+        fetchServerFiles();
+        
+        // 设置定时刷新服务器列表（每60秒刷新一次）
+        setInterval(fetchServerFiles, 60000);
+        
+        // 侧边栏项目点击事件
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除所有active类
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                // 为当前点击项添加active类
+                this.classList.add('active');
+                
+                // 这里可以添加页面切换逻辑
+            });
+        });
+    });
+</script>
+<!-- ... 现有代码 ... -->
